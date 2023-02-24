@@ -3,6 +3,7 @@ class Timer {
     this.durationInput = durationInput;
     this.startButton = startButton;
     this.pauseButton = pauseButton;
+  
     if (callbacks) {
       this.onStart = callbacks.onStart;
       this.onTick = callbacks.onTick;
@@ -18,7 +19,7 @@ class Timer {
       this.onStart(this.timeRemaining);
     }
     this.tick();
-    this.interval = setInterval(this.tick, 20);
+    const interval = setInterval(this.tick, 20);
   };
 
   pause = () => {
